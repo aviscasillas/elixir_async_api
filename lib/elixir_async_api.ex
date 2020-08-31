@@ -17,7 +17,7 @@ defmodule ElixirAsyncApi do
     ]
   end
 
-  def create_resource(args) do
-    Logger.info("Creating resource: #{inspect(args)}")
+  def create_resource(name) do
+    Kaffe.Producer.produce_sync("resources", UUID.uuid1(), name)
   end
 end
