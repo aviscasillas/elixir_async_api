@@ -7,11 +7,17 @@ defmodule ElixirAsyncApi do
   if it comes from the database, an external API or others.
   """
 
+  require Logger
+
   def list_resources do
     [
       %{id: 1, name: "First"},
       %{id: 2, name: "Second"},
       %{id: 3, name: "Third"},
     ]
+  end
+
+  def create_resource(args) do
+    Logger.info("Creating resource: #{inspect(args)}")
   end
 end

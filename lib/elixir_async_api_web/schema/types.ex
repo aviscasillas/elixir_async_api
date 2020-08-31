@@ -5,4 +5,8 @@ defmodule ElixirAsyncApiWeb.Schema.Types do
     field :id, :id
     field :name, :string
   end
+
+  object :mutation_response do
+    field :status, :string
+  end
 end
