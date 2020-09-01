@@ -13,9 +13,25 @@ defmodule ElixirAsyncApiWeb.Schema do
 
   mutation do
     @desc "Create a resource"
-    field :create_resource, type: :mutation_response do
+    field :create_resource, type: :resource do
       arg :name, non_null(:string)
       resolve &Resolver.create_resource/3
+    end
+  end
+
+  subscription do
+    field :resource_created, :resource do
+      config fn _, _ ->
+        {:ok, topic: true}
+      end
+
+      trigger :create_resource, topic: fn _ ->
+        true
+      end
+
+      resolve fn resource, _, _ ->
+        {:ok, resource}
+      end
     end
   end
 end

@@ -16,7 +16,11 @@ defmodule ElixirAsyncApiWeb.Router do
   scope "/api" do
     pipe_through :api
 
-    forward "/graphiql", Absinthe.Plug.GraphiQL, schema: ElixirAsyncApiWeb.Schema
+    forward "/graphiql",
+      Absinthe.Plug.GraphiQL,
+      schema: ElixirAsyncApiWeb.Schema,
+      socket: ElixirAsyncApiWeb.UserSocket
+
     forward "/", Absinthe.Plug, schema: ElixirAsyncApiWeb.Schema
   end
 

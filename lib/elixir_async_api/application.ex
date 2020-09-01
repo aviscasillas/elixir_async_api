@@ -10,11 +10,12 @@ defmodule ElixirAsyncApi.Application do
       # Start the Telemetry supervisor
       ElixirAsyncApiWeb.Telemetry,
       # Start the PubSub system
-      {Phoenix.PubSub, name: ElixirAsyncApi.PubSub},
+      {Phoenix.PubSub, [name: ElixirAsyncApi.PubSub, adapter: Phoenix.PubSub.PG2]},
       # Start the Endpoint (http/https)
-      ElixirAsyncApiWeb.Endpoint
+      ElixirAsyncApiWeb.Endpoint,
       # Start a worker by calling: ElixirAsyncApi.Worker.start_link(arg)
       # {ElixirAsyncApi.Worker, arg}
+      {Absinthe.Subscription, ElixirAsyncApiWeb.Endpoint}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

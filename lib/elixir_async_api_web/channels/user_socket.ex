@@ -1,5 +1,6 @@
 defmodule ElixirAsyncApiWeb.UserSocket do
   use Phoenix.Socket
+  use Absinthe.Phoenix.Socket, schema: ElixirAsyncApiWeb.Schema
 
   ## Channels
   # channel "room:*", ElixirAsyncApiWeb.RoomChannel
