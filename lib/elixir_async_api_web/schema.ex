@@ -1,21 +1,20 @@
 defmodule ElixirAsyncApiWeb.Schema do
   use Absinthe.Schema
-  import_types ElixirAsyncApiWeb.Schema.Types
 
-  alias ElixirAsyncApiWeb.Resolver
+  alias ElixirAsyncApiWeb.ResourcesResolver
 
   query do
-    @desc "Get resources"
+    @desc "Get all resources"
     field :resources, list_of(:resource) do
-      resolve &Resolver.list_resources/3
+      resolve &ResourcesResolver.list_resources/3
     end
   end
-
+  
   mutation do
     @desc "Create a resource"
     field :create_resource, type: :resource do
       arg :name, non_null(:string)
-      resolve &Resolver.create_resource/3
+      resolve &ResourcesResolver.create_resource/3
     end
   end
 
@@ -33,5 +32,10 @@ defmodule ElixirAsyncApiWeb.Schema do
         {:ok, resource}
       end
     end
+  end
+
+  object :resource do
+    field :id, :id
+    field :name, :string
   end
 end
