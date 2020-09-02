@@ -17,7 +17,12 @@ defmodule ElixirAsyncApi.Application do
       ElixirAsyncApiWeb.Endpoint,
       # Start a worker by calling: ElixirAsyncApi.Worker.start_link(arg)
       # {ElixirAsyncApi.Worker, arg}
-      {Absinthe.Subscription, ElixirAsyncApiWeb.Endpoint}
+      {Absinthe.Subscription, ElixirAsyncApiWeb.Endpoint},
+      %{
+        id: Kaffe.GroupMemberSupervisor,
+        start: {Kaffe.GroupMemberSupervisor, :start_link, []},
+        type: :supervisor
+      }
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

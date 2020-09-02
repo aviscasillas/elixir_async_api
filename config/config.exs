@@ -31,6 +31,13 @@ config :kaffe,
     endpoints: [localhost: 9092],
     topics: ["resources"],
     partition_strategy: :md5
+  ],
+  consumer: [
+    endpoints: [localhost: 9092],
+    topics: ["resources"],
+    consumer_group: "elixir_async_api",
+    message_handler: ElixirAsyncApi.ResourcesProcessor,
+    start_with_earliest_message: true
   ]
 
 # Import environment specific config. This must remain at the bottom
