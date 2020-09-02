@@ -5,7 +5,7 @@ This is just a small prototype used as a playground to dive a bit into [Elixir](
 Note that this does not aim to teach anything, but is more like a self hands on to different technologies and concepts that may not be 100% correct.
 
 Checkout the diagram below for a basic overview of the internal architecture:
-<img src="https://github.com/aviscasillas/elixir_async_api/context_diagram.jpg">
+<img src="https://github.com/aviscasillas/elixir_async_api/blob/master/context_diagram.jpg">
 
 
 ## Run it
