@@ -7,6 +7,8 @@ defmodule ElixirAsyncApi.Application do
 
   def start(_type, _args) do
     children = [
+      # Start the Ecto repository
+      ElixirAsyncApi.Repo,
       # Start the Telemetry supervisor
       ElixirAsyncApiWeb.Telemetry,
       # Start the PubSub system

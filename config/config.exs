@@ -7,6 +7,9 @@
 # General application configuration
 use Mix.Config
 
+config :elixir_async_api,
+  ecto_repos: [ElixirAsyncApi.Repo]
+
 # Configures the endpoint
 config :elixir_async_api, ElixirAsyncApiWeb.Endpoint,
   url: [host: "localhost"],
