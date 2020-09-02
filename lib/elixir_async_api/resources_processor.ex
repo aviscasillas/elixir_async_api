@@ -1,8 +1,11 @@
 defmodule ElixirAsyncApi.ResourcesProcessor do
+  alias ElixirAsyncApi.Repo
+  alias ElixirAsyncApi.Resource
+
   def handle_messages(messages) do
-    for %{key: key, value: value} = message <- messages do
-      IO.inspect message
-      IO.puts "#{key}: #{value}"
+    for %{key: _key, value: value} <- messages do
+      Poison.decode!(value, as: %Resource{})
+      |> Repo.insert
     end
     :ok
   end

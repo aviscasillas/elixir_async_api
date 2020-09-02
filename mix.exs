@@ -50,7 +50,7 @@ defmodule ElixirAsyncApi.MixProject do
       {:absinthe_plug, "~> 1.5.0"},
       {:kaffe, "~> 1.18"},
       {:uuid, "~> 1.1"},
-      {:json, "~> 1.3.0"}
+      {:poison, "~> 4.0.1"}
     ]
   end
 

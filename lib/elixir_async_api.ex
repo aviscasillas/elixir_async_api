@@ -19,7 +19,7 @@ defmodule ElixirAsyncApi do
 
   def create_resource(name) do
     resource = %{id: UUID.uuid1(), name: name}
-    case Kaffe.Producer.produce_sync("resources", resource.id, JSON.encode!(resource)) do
+    case Kaffe.Producer.produce_sync("resources", resource.id, Poison.encode!(resource)) do
       :ok -> {:ok, resource}
     end
   end
