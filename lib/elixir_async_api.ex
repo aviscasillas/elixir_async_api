@@ -1,4 +1,7 @@
 defmodule ElixirAsyncApi do
+  alias ElixirAsyncApi.Repo
+  alias ElixirAsyncApi.Resource
+
   @moduledoc """
   ElixirAsyncApi keeps the contexts that define your domain
   and business logic.
@@ -7,14 +10,8 @@ defmodule ElixirAsyncApi do
   if it comes from the database, an external API or others.
   """
 
-  require Logger
-
   def list_resources do
-    [
-      %{id: 1, name: "First"},
-      %{id: 2, name: "Second"},
-      %{id: 3, name: "Third"},
-    ]
+    Resource |> Repo.all
   end
 
   def create_resource(name) do
