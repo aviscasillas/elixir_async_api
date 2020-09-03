@@ -2,11 +2,12 @@
 
 This is just a small prototype used as a playground to dive a bit into [Elixir](https://elixir-lang.org/), [Kafka](https://kafka.apache.org/), [GraphQL](https://graphql.org/) ([subscriptions](https://graphql.org/blog/subscriptions-in-graphql-and-relay/)) and [CQRS](https://medium.com/@danielckv/introduction-to-cqrs-in-microservices-70e4759d9ecc) pattern.
 
-Note that this does not aim to teach anything, but is more like a self hands on to different technologies and concepts that may not be 100% correct.
+Bear in mind that this does not aim to teach anything, but is more like a self hands on to different technologies and concepts.
 
-Checkout the diagram below for a basic overview of the internal architecture:
+Checkout the diagram below for an overview on the basic architecture:
 <img src="https://github.com/aviscasillas/elixir_async_api/blob/master/context_diagram.jpg">
 
+> Note that both, API and kafka consumer, live within the same application (in favour of simlicity)
 
 ## Run it
 
