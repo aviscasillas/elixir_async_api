@@ -7,7 +7,7 @@ Bear in mind that this does not aim to teach anything, but is more like a self h
 Checkout the diagram below for an overview on the basic architecture:
 <img src="https://github.com/aviscasillas/elixir_async_api/blob/master/context_diagram.jpg">
 
-> Note that both, API and kafka consumer, live within the same application (in favour of simplicity)
+> Note that commands, queries and API, live within the same application (in favour of simplicity).
 
 ## Run it
 
