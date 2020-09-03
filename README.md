@@ -15,13 +15,13 @@ Checkout the diagram below for an overview on the basic architecture:
 # Clone this repo
 https://github.com/aviscasillas/elixir_async_api.git
 
-# Go to the root path of the project
+# Go to the root path
 cd elixir_async_api
 
-# Install application dependencies
+# Install dependencies
 mix deps.get
 
-# Startup Kafka and Postgres (wait for it to startup Postgres and Kafka)
+# Startup Kafka and Postgres (wait for it to startup)
 docker-compose up &
 
 # Setup the database
