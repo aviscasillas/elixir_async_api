@@ -7,7 +7,8 @@ Bear in mind that this does not aim to teach anything, but it's more like a self
 Checkout the diagram below for an overview on the basic architecture:
 <img src="https://github.com/aviscasillas/elixir_async_api/blob/master/context_diagram.jpg">
 
-> Note that commands, queries and API, live within the same application (in favour of simplicity).
+> Note that, in favour of simplicity, commands, queries and API live all within the same application.
+> Because of that, queries and subscriptions are handled by the same processor but they would potentially live in separated applications.
 
 ## Run it
 
