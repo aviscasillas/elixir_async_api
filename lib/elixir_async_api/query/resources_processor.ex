@@ -1,6 +1,6 @@
-defmodule ElixirAsyncApi.ResourcesProcessor do
+defmodule ElixirAsyncApi.Query.ResourcesProcessor do
   alias ElixirAsyncApi.Repo
-  alias ElixirAsyncApi.Resource
+  alias ElixirAsyncApi.Query.Resource
 
   def handle_messages(messages) do
     for %{key: _key, value: value} <- messages do

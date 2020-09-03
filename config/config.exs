@@ -36,7 +36,7 @@ config :kaffe,
     endpoints: [localhost: 9092],
     topics: ["resources"],
     consumer_group: "elixir_async_api",
-    message_handler: ElixirAsyncApi.ResourcesProcessor,
+    message_handler: ElixirAsyncApi.Query.ResourcesProcessor,
     start_with_earliest_message: true
   ]
 
