@@ -4,8 +4,11 @@ defmodule ElixirAsyncApi.Query.ResourcesProcessor do
 
   def handle_messages(messages) do
     for %{key: _key, value: value} <- messages do
-      Poison.decode!(value, as: %Resource{})
-      |> Repo.insert
+      resource = Poison.decode!(value, as: %Resource{})
+
+      resource |> Repo.insert
+
+      Absinthe.Subscription.publish(ElixirAsyncApiWeb.Endpoint, resource, [resource_created: true])
     end
     :ok
   end

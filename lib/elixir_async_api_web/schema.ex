@@ -24,10 +24,6 @@ defmodule ElixirAsyncApiWeb.Schema do
         {:ok, topic: true}
       end
 
-      trigger :create_resource, topic: fn _ ->
-        true
-      end
-
       resolve fn resource, _, _ ->
         {:ok, resource}
       end
